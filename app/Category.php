@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 class Category extends Model
 {
     // Mass assigned
-    protected $fillable = ['title', 'slug', 'parent_id', 'published', 'created_by', 'modified_by'];
+    protected $fillable = ['title', 'slug', 'parent_id', 'published', 'created_by', 'modified_by', 'meta_title', 'meta_description', 'meta_keyword'];
     // Mutators
     public function setSlugAttribute($value) {
       $this->attributes['slug'] = Str::slug( mb_substr($this->title, 0, 40) . "-");

@@ -44,7 +44,7 @@
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Блог</a>
                           <ul class="dropdown-menu" role="menu">
                             <li><a href="{{route('admin.category.index')}}">Категории</a></li>
-                            <li><a href="#">Материалы</a></li>
+                            <li><a href="{{route('admin.article.index')}}">Материалы</a></li>
                           </ul>
                         </li>
                     </ul>
@@ -86,5 +86,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+    $( document ).ready(function(){
+    CKEDITOR.replace( 'description_short' );
+    CKEDITOR.replace( 'description' );
+});</script>
+    <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}" defer></script>
+
 </body>
 </html>
