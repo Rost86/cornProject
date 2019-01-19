@@ -11,7 +11,7 @@
     @endisset
 
     >
-    {!! $delimiter or "" !!}{{$category->title or ""}}
+    {!! $delimiter ?? "" !!}{{$category->title ?? ""}}
   </option>
 
   @if (count($category->children) > 0)
