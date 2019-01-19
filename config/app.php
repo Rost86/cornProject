@@ -177,6 +177,7 @@ return [
         
         //my packages
         Unisharp\Ckeditor\ServiceProvider::class,
+        App\Providers\BlogServiceProvider::class,
 
     ],
 
