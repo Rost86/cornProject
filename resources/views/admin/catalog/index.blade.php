@@ -5,14 +5,14 @@
 <div class="container">
 
   @component('admin.components.breadcrumb')
-    @slot('title') Новостей категорий @endslot
+    @slot('title') Список Каталогов @endslot
     @slot('parent') Главная @endslot
-    @slot('active') Новости @endslot
+    @slot('active') Каталог @endslot
   @endcomponent
 
   <hr>
 
-  <a href="{{route('admin.article.create')}}" class="btn btn-primary pull-right mb-3"><i class="fa fa-plus-square-o"></i> Создать новость</a>
+  <a href="{{route('admin.catalog.create')}}" class="btn btn-primary pull-right mb-3"><i class="fa fa-plus-square-o"></i> Создать каталог</a>
   <table class="table table-striped">
     <thead>
       <th>Наименование</th>
@@ -20,15 +20,15 @@
       <th class="text-right">Действие</th>
     </thead>
     <tbody>
-      @forelse ($articles as $article)
+      @forelse ($catalogs as $catalog)
         <tr>
-          <td>{{$article->title}}</td>
-          <td>{{$article->published}}</td>
+          <td>{{$catalog->title}}</td>
+          <td>{{$catalog->published}}</td>
           <td>
-          <form onsubmit="if(confirm('Удалить?')){return true }else{ return false}" action="{{route('admin.article.destroy', $article)}}" method="post">
+          <form onsubmit="if(confirm('Удалить?')){return true }else{ return false}" action="{{route('admin.catalog.destroy', $catalog)}}" method="post">
           <input type="hidden" name="_method" value="DELETE">
              {{ csrf_field()}}
-             <a href="{{route('admin.article.edit', $article)}}"><i class="fa fa-edit"></i></a>
+             <a href="{{route('admin.catalog.edit', $catalog)}}"><i class="fa fa-edit"></i></a>
              <button type="sybmit" class="btn"><i class="fa fa-trash"></i></button>
              </form>
           
@@ -45,7 +45,7 @@
     <tr>
       <td colspan="3">
         <ul class="pagination pull-right">
-          {{$articles->links()}}
+          {{$catalogs->links()}}
         </ul>
       </td>
     </tr>

@@ -12,7 +12,7 @@
 
   <hr>
 
-  <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Создать категорию</a>
+  <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right mb-3"><i class="fa fa-plus-square-o"></i> Создать категорию</a>
   <table class="table table-striped">
     <thead>
       <th>Наименование</th>
@@ -29,7 +29,7 @@
           <input type="hidden" name="_method" value="DELETE">
              {{ csrf_field()}}
              <a href="{{route('admin.category.edit', $category)}}"><i class="fa fa-edit"></i></a>
-             <button type="sybmit" class="btn"><i class="fa fa-trash-0"></i></button>
+             <button type="sybmit" class="btn"><i class="fa fa-trash"></i></button>
              </form>
           
           </td>

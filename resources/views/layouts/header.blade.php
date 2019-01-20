@@ -5,16 +5,14 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
-               @include('layouts.top_menu', ['categories' => $categories])
+         
                <li class="nav-item">
-                    <a class="nav-link" href="#">О нас</a>
+                    <a class="nav-link" href="/price/katolog-produktsii">Наши предложения</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Контакты</a>
+                    <a class="nav-link" href="/category/blog">Блог</a>
                 </li>
-                <li class="nav-item">
-                    <button type="button" class="btn btn-primary">Подать заявку</button>
-                </li>
+           
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
                 </li>

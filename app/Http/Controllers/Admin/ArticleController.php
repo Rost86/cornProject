@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use App\Article;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 class ArticleController extends Controller
 {
     /**
@@ -20,7 +17,6 @@ class ArticleController extends Controller
           'articles' => Article::orderBy('created_at', 'desc')->paginate(10)
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -34,7 +30,6 @@ class ArticleController extends Controller
           'delimiter'  => ''
         ]);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -44,15 +39,12 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $article = Article::create($request->all());
-
         // Categories
         if($request->input('categories')) :
           $article->categories()->attach($request->input('categories'));
         endif;
-
         return redirect()->route('admin.article.index');
     }
-
     /**
      * Display the specified resource.
      *
@@ -63,7 +55,6 @@ class ArticleController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -78,7 +69,6 @@ class ArticleController extends Controller
           'delimiter'  => ''
         ]);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -89,16 +79,13 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $article->update($request->except('slug'));
-
         // Categories
         $article->categories()->detach();
         if($request->input('categories')) :
           $article->categories()->attach($request->input('categories'));
         endif;
-
         return redirect()->route('admin.article.index');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -109,7 +96,6 @@ class ArticleController extends Controller
     {
         $article->categories()->detach();
         $article->delete();
-
         return redirect()->route('admin.article.index');
     }
 }

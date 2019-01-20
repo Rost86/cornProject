@@ -13,13 +13,15 @@
 <input type="text" class="form-control" name="title" placeholder="Заголовок новости" value="{{$article->title ?? ""}}" required>
 
 <label for="">Псевдоним (Уникальное значение)</label>
-<input class="form-control" type="text" name="slug" placeholder="Автоматическая генерация" value="{{$article->slug ?? ""}}" readonly="">
+<input class="form-control" type="text" name="slug" placeholder="Автоматическая генерация" value="{{$article->slug ?? ""}}">
 
 <label for="">Родительская категория</label>
 <select class="form-control" name="categories[]" multiple="">
   @include('admin.articles.partials.categories', ['categories' => $categories])
 </select>
+<label for="">Изображение для статьи</label>
 
+<hr />
 <label for="">Краткое описание</label>
 <textarea class="form-control" id="description_short" name="description_short">{{$article->description_short ?? ""}}</textarea>
 

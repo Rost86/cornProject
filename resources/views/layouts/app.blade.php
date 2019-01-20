@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-100" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,13 +24,19 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="/storage/app/public/css/style.css">
 </head>
-<body>
+<body class="d-flex flex-column h-100" style="padding:56px;">
     
         @include('layouts.header') 
 
     
         @yield('content')
-     
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <hr>
+        <span class="text-muted">Copyright</span>
+    </div>
+</footer>
+   
     
 </body>
 </html>

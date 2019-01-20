@@ -20,6 +20,14 @@
   <option value="0">-- без родительской категории --</option>
   @include('admin.categories.partials.categories', ['categories' => $categories])
 </select>
+<label for="">Мета заголовок</label>
+<input type="text" class="form-control" name="meta_title" placeholder="Мета заголовок" value="{{$category->meta_title ?? ""}}">
+
+<label for="">Мета описание</label>
+<input type="text" class="form-control" name="meta_description" placeholder="Мета описание" value="{{$category->meta_description ?? ""}}">
+
+<label for="">Ключевые слова</label>
+<input type="text" class="form-control" name="meta_keyword" placeholder="Ключевые слова, через запятую" value="{{$category->meta_keyword ?? ""}}">
 
 <hr />
 
