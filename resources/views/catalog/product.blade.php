@@ -7,8 +7,8 @@
 @section('content')
 <div class="container">
         <div class="user-block mt-5 p-5 bg-light">
-            <h1 class="h3">Овес</h1>
-            <a href="#" class="mr-4 h4">Иванов Иван Иванович</a>
+            <h1 class="h3">{{$product->title}}</h1>
+            <!--<a href="#" class="mr-4 h4">Иванов Иван Иванович</a>-->
             <div class="row">
                 <div class="col-md-4">
                     <div class="table-responsive">
